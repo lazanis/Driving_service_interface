@@ -1,7 +1,8 @@
 import datetime
 
 
-server_address = 'http://localhost:7777/'
+server_address = 'https://localhost:7777/'
+cert_path = 'cert.pem'
 
 
 def get_drive_date():
