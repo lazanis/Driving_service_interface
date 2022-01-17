@@ -35,7 +35,7 @@ def make_driving_reservation(user_id: str, selected_offer: str):
     params['offer_id'] = selected_offer
 
     endpoint = 'make_driving_reservation'
-    response = requests.post(server_address + endpoint, params=params, verify=cert_path)
+    response = requests.post(server_address + endpoint, params=params)
     response_code = response.status_code
     if response_code == 200:
         response_content = eval(response.content.decode('utf-8'))
@@ -63,7 +63,7 @@ def add_new_reservation(user_id: str):
     params['drive_date'] = drive_date
 
     endpoint = 'get_driving_offers'
-    response = requests.get(server_address + endpoint, params=params, verify=cert_path)
+    response = requests.get(server_address + endpoint, params=params)
     response_code = response.status_code
     if response_code == 200:
         response_content = eval(response.content.decode('utf-8'))
@@ -129,7 +129,7 @@ def make_review(user_id: str, drive_id: str, driver_id: str):
     params['review_grade'] = review_grade
 
     endpoint = 'add_review'
-    response = requests.post(server_address + endpoint, params=params, verify=cert_path)
+    response = requests.post(server_address + endpoint, params=params)
     response_code = response.status_code
     if response_code == 200:
         response_content = eval(response.content.decode('utf-8'))
@@ -150,7 +150,7 @@ def add_new_review(user_id: str):
     params['user_id'] = user_id
 
     endpoint = 'get_past_drives'
-    response = requests.get(server_address + endpoint, params=params, verify=cert_path)
+    response = requests.get(server_address + endpoint, params=params)
     response_code = response.status_code
     if response_code == 200:
         response_content = eval(response.content.decode('utf-8'))

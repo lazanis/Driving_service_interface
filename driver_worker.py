@@ -27,7 +27,7 @@ def add_new_car(user_id: str):
     params['type'] = car_type
 
     endpoint = 'add_new_car'
-    response = requests.post(server_address + endpoint, params=params, verify=cert_path)
+    response = requests.post(server_address + endpoint, params=params)
     response_code = response.status_code
     if response_code == 200:
         response_content = eval(response.content.decode('utf-8'))
@@ -48,7 +48,7 @@ def get_all_cars_for_user(user_id: str):
     params['user_id'] = user_id
 
     endpoint = 'get_all_cars_for_user'
-    response = requests.get(server_address + endpoint, params=params, verify=cert_path)
+    response = requests.get(server_address + endpoint, params=params)
     response_code = response.status_code
     if response_code == 200:
         response_content = eval(response.content.decode('utf-8'))
@@ -101,7 +101,7 @@ def add_new_offer(user_id: str):
         params['car_id'] = car_id
 
         endpoint = 'add_new_offer'
-        response = requests.post(server_address + endpoint, params=params, verify=cert_path)
+        response = requests.post(server_address + endpoint)
         response_code = response.status_code
         if response_code == 200:
             response_content = eval(response.content.decode('utf-8'))

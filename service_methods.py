@@ -1,7 +1,7 @@
 import datetime
 
 
-server_address = 'https://localhost:7777/'
+server_address = 'https://79.101.232.149:7777/'
 cert_path = 'cert.pem'
 
 

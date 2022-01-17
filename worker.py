@@ -4,7 +4,7 @@ import requests
 from driver_worker import driver_start
 from passenger_worker import passenger_start
 
-server_address = 'https://localhost:7777/'
+server_address = 'https://79.101.232.149:7777/'
 cert_path = 'cert.pem'
 
 
@@ -15,7 +15,7 @@ def login():
     params = {'username': username, 'pwd': pwd}
 
     endpoint = 'login'
-    response = requests.get(server_address + endpoint, params=params, verify=cert_path)
+    response = requests.get(server_address + endpoint, params=params)
     response_code = response.status_code
     if response_code == 200:
         response_content = eval(response.content.decode('utf-8'))
@@ -105,7 +105,7 @@ def register():
     params['email'] = email
 
     endpoint = 'register'
-    response = requests.post(server_address + endpoint, params=params, verify=cert_path)
+    response = requests.post(server_address + endpoint, params=params)
     response_code = response.status_code
     if response_code == 200:
         response_content = eval(response.content.decode('utf-8'))
