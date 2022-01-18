@@ -150,6 +150,6 @@ def start():
     if int(value) == 1:
         print('')
         login()
-    elif int(value == 2):
+    elif int(value) == 2:
         print('')
         register()
